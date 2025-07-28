@@ -1,6 +1,6 @@
 ---
 vm_environment_tag: linux-dailydemo
-vm_vpc_name: satellite-dailydemo
+vm_vpc_name: linux-dailydemo
 vm_user_name: eric.ames
 vm_subnet_name: "{{ vm_vpc_name }}_Subnet"
 vm_image: ami-054f77471c0e69deb

@@ -14,7 +14,7 @@ Role Variables
 ```
 vm_name: Linux Daily Demo
 vm_environment_tag: linux-dailydemo
-vm_vpc_name: satellite-dailydemo
+vm_vpc_name: linux-dailydemo
 vm_user_name: eric.ames
 vm_subnet_name: "{{ vm_vpc_name }}_Subnet"
 vm_image: ami-054f77471c0e69deb
@@ -44,10 +44,6 @@ vm_machine_create_time: ''
 ```
 Dependencies
 ------------
-Satellite Infrastructure. This vm will be provisioned in the satellite-dailydemo vpc.  It will also be register with the Satellite server.
-
-Collection used to build the Satellite server.
-ericcames.satellite_dailydemo
 
 Example Playbook
 ----------------
