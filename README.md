@@ -104,11 +104,6 @@ Day 2 - Common tasks
 [Linux Day 2 - Facts Cached](https://github.com/ericcames/aap.dailydemo.linux/blob/main/playbooks/gather_facts.yml "Linux Day 2 - Facts Cached") <br>
 [Linux Day 2 - file check](https://github.com/ericcames/aap.dailydemo.linux/blob/main/playbooks/day2filecheck.yml "Linux Day 2 - file check") <br>
 
-# Red Hat Satellite
-
-![alt text](https://github.com/ericcames/aap.dailydemo.linux/blob/main/images/ddlsat1.png "Webtop")
-![alt text](https://github.com/ericcames/aap.dailydemo.linux/blob/main/images/ddlsat2.png "Webmid")
-
 # Cockpit the Administrators GUI
 
 ![alt text](https://github.com/ericcames/aap.dailydemo.linux/blob/main/images/cockpit.png "cockpit")
