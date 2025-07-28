@@ -1,0 +1,56 @@
+---
+- name: Get instances id
+  register: instance_info
+  amazon.aws.ec2_instance_info:
+    region: "{{ vm_region }}"
+    filters:
+      "tag:Name": "{{ vm_name }}"
+      instance-state-name: ["running"]
+      "tag:Contact": "{{ vm_my_email_address }}"
+
+- name: Printing out instance_info.instances[0].instance_id
+  when: instance_info.instances[0].instance_id is defined
+  ansible.builtin.debug:
+    msg: "{{ instance_info.instances[0].instance_id }}"
+
+- name: Capture public dns name
+  register: get_instance_info_server
+  ansible.builtin.set_stats:
+    data:
+      get_instance_info_server: "{{ instance_info.instances[0].public_dns_name }}"
+
+- name: Capture public ip address
+  register: get_instance_info_public_ip
+  ansible.builtin.set_stats:
+    data:
+      get_instance_info_public_ip: "{{ instance_info.instances[0].public_ip_address }}"
+
+- name: Capture image id
+  register: get_instance_info_ami_id
+  ansible.builtin.set_stats:
+    data:
+      get_instance_info_ami_id: "{{ instance_info.instances[0].image_id }}"
+
+- name: Capture instance id
+  register: my_get_instance_info_instance_id
+  ansible.builtin.set_stats:
+    data:
+      get_instance_info_instance_id: "{{ instance_info.instances[0].instance_id }}"
+
+- name: Capture instance type
+  register: get_instance_info_instance_type
+  ansible.builtin.set_stats:
+    data:
+      get_instance_info_instance_type: "{{ instance_info.instances[0].instance_type }}"
+
+- name: Capture launch time
+  register: get_instance_info_launch_time
+  ansible.builtin.set_stats:
+    data:
+      get_instance_info_launch_time: "{{ instance_info.instances[0].launch_time }}"
+
+- name: Capture availability zone
+  register: get_instance_info_availability_zone
+  ansible.builtin.set_stats:
+    data:
+      get_instance_info_availability_zone: "{{ instance_info.instances[0].placement.availability_zone }}"

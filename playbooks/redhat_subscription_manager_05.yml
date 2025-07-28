@@ -1,0 +1,12 @@
+---
+- name: Registering system with Red Hat Subscription Management and Red Hat Insights
+  hosts: rheldemo
+  become: true
+
+  tasks:
+
+    - name: Red Hat Subscription Manager
+      tags:
+        - create
+      ansible.builtin.include_role:
+        name: rhsm
